@@ -1,0 +1,67 @@
+/*
+*prd - products and services
+*prd-frame - products frame
+*/
+
+.prd-frame--1 {
+
+	.frm-title {
+		display: none;
+	}
+
+	.frm-cntnr {
+
+		.frm-desc {
+			
+			* {
+				line-height: 1.6;
+			}
+		}
+
+		.service-items {
+			display: flex;
+			justify-content: space-between;
+			margin-top: 50px;
+
+			.service-item {
+				position: relative;
+				width: 220px;
+				height: 220px;
+				cursor: pointer;
+
+				.service-image {
+					width: 100%;
+					height: 100%;
+					position: relative;
+
+					&::before {
+						content: '';
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 100%;
+						background-color: rgba(0,0,0,.5);
+					}
+
+					img {
+						width: 100%;
+						height: 100%;
+						display: block;
+					}
+				}
+
+				.service-title {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					font-family: $font--2a;
+					font-size: 8px;
+					display: block;
+					text-align: center;
+				}
+			}
+		}
+	}
+}

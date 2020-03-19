@@ -1,0 +1,72 @@
+/*
+*subprd - sub page products and services
+*sub-frame - products frame
+*/
+
+.subprd-frame {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.subprd-frame--1 {
+
+	.frm-cntnr {
+		margin-top: 156px;
+
+		.frm-tab__holder {
+
+			.tab-content {
+				margin: 0 auto;
+
+				.frm-sub-title {
+
+				}
+
+				.frm-title {
+
+				}
+
+				.content-list {
+					display: flex;
+					justify-content: space-between;
+
+					.list-items {
+						margin-bottom: 45px;
+
+						.list-title {
+							color: $color--mineShaft;
+							font-family: $font--2a;
+							font-size: 11px;
+							margin-bottom: 15px;
+						}
+
+						.list-item {
+							color: $color--mineShaft;
+							font-family: $font--2;
+							font-size: 13px;
+							position: relative;
+							margin-left: 12px;
+							margin-bottom: 1px;
+
+							&::before {
+								content: '';
+								position: absolute;
+								left: -12px;
+								top: 6px;
+								width: 5px;
+								height: 5px;
+								border-radius: 50%;
+								background-color: $color--indigo;
+							}
+						}
+					}
+				}
+
+				.frm-desc {
+
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,124 @@
+/*
+* Reset It All
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del,
+dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup,
+tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form,
+label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, footer,
+header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    // font-family: Arial, sans-serif;
+    font-weight: normal;
+}
+
+h1, h2, h3, h4, h5, h6  {
+    // font-family: Arial, sans-serif;
+}
+
+h1 { font-size: 2em; }
+h2 { font-size: 1.8em; }
+h3 { font-size: 1.6em; }
+h4 { font-size: 1.4em; }
+h5 { font-size: 1.2em; }
+h6 { font-size: 1em; }
+p { font-size: 1em; }
+span { font-size: .9em; }
+label { font-size: .85em; }
+
+a {
+    text-decoration: none;
+    outline: 0 none;
+    color: inherit;
+}
+
+ul, li {
+    display: block;
+}
+
+strong, b {
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}
+
+strong{
+    color: #000 !important;
+}
+
+input,
+textarea {
+    font-family: Arial, sans-serif;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+textarea {
+    resize: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+button:focus {
+    outline: none;
+}
+
+
+/*
+* Silverstripe CMS Login/Forgot
+*/
+#MemberLoginForm_LoginForm,
+#MemberLoginForm_LostPasswordForm,
+#LostPasswordForm_lostPasswordForm {
+    height: 50%;
+    min-height: 400px;
+    padding-top: 10%;
+    text-align: center;
+}
+
+#MemberLoginForm_LoginForm_Password_Holder,
+#LostPasswordForm_lostPasswordForm_Email_Holder,
+#ForgotPassword {
+    margin-top: 15px;
+}
+
+#ForgotPassword { font-size: .85em; }
+
+// input text
+#MemberLoginForm_LoginForm_Email,
+#MemberLoginForm_LoginForm_Password,
+#MemberLoginForm_LostPasswordForm_Email,
+#LostPasswordForm_lostPasswordForm_Email {
+    margin-top: 5px;
+    padding: 5px 20px;
+    text-align: center;
+    border-radius: 20px;
+    border: 1px solid #f2f2f2;
+    background: #fff;
+    outline: none;
+}
+
+// button
+#MemberLoginForm_LoginForm_action_doLogin,
+#MemberLoginForm_LostPasswordForm_action_forgotPassword,
+#LostPasswordForm_lostPasswordForm_action_forgotPassword {
+    padding: 5px 20px;
+    margin: 10px 0;
+    outline: none;
+    cursor: pointer;
+}
+
+#MemberLoginForm_LoginForm_Remember_Holder,
+#MemberLoginForm_LoginForm_Remember_Holder .checkbox {
+    width: auto !important;
+    vertical-align: middle;
+    margin: 10px 5px;
+}

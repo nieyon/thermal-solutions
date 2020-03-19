@@ -1,0 +1,69 @@
+/*
+*abt - About
+*abt-frame - About Frame
+*/
+.abt-frame {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	// margin-top: 76px;
+}
+
+.abt-frame--1 {
+
+	.frm-title {
+		
+
+		h1 {
+			display: none;
+		}
+	}
+
+	.frm-cntnr {
+
+		.frm-tab__holder {
+
+			.tab-content {
+				margin: 0 auto;
+				padding-bottom: 125px;
+				
+				.frm-sub-title {
+
+				}
+
+				.frm-title {
+
+				}
+
+				.frm-desc {
+
+				}
+
+				.accomplishments {
+				    margin-top: 50px;
+				    width: 100%;
+
+				    .accom-item {
+
+				        .picture {
+				            width: 45px;
+				            height: 45px;
+
+				            img {
+
+				            }
+				        }
+
+				        .year {
+				            font-size: 12px;
+				        }
+
+				        .frm-desc {
+
+				        }
+				    }
+				}
+			}
+		}
+	}
+}
