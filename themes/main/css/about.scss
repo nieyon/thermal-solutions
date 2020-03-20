@@ -13,7 +13,6 @@
 
 	.frm-title {
 		
-
 		h1 {
 			display: none;
 		}
@@ -26,6 +25,7 @@
 			.tab-content {
 				margin: 0 auto;
 				padding-bottom: 125px;
+				padding-bottom: 0;
 				
 				.frm-sub-title {
 
@@ -38,31 +38,32 @@
 				.frm-desc {
 
 				}
+			}
 
-				.accomplishments {
-				    margin-top: 50px;
-				    width: 100%;
+			.accomplishments {
+			    margin-top: 50px;
+			    width: 60%;
+			    padding-bottom: 80px;
 
-				    .accom-item {
+			    .accom-item {
 
-				        .picture {
-				            width: 45px;
-				            height: 45px;
+			        .picture {
+			            width: 45px;
+			            height: 45px;
 
-				            img {
+			            img {
 
-				            }
-				        }
+			            }
+			        }
 
-				        .year {
-				            font-size: 12px;
-				        }
+			        .year {
+			            font-size: 12px;
+			        }
 
-				        .frm-desc {
+			        .frm-desc {
 
-				        }
-				    }
-				}
+			        }
+			    }
 			}
 		}
 	}

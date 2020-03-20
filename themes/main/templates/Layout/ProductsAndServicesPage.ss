@@ -1,11 +1,14 @@
-<section class="fixed-header subprd-frame subprd-frame--1 bg--alabaster">
+<section class="fixed-header subprd-frame subprd-frame--1 bg--alabaster mobile">
+	<div class="frm-title mb-0">
+		<h1>$MenuTitle</h1>
+	</div>
 	<%-- tabs --%>
 	<div class="frm-tabs-cntnr width--100">
 		<div class="frm-tab width--90">
 			<ul class="tab-list">
 			<% loop $Menu(2) %>
 				<li class="tab-item align-c">
-					<a href="$Link" class="tab-link">$Title</a>
+					<a href="$Link" class="tab-link currentTab">$Title</a>
 				</li>
 			<% end_loop %>
 			</ul>

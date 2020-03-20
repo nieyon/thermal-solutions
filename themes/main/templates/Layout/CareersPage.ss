@@ -8,14 +8,15 @@
 			<ul class="tab-list">
 				<% loop $CareersTab %>
 				    <li class="tab-item align-c">
-						<a class="tab-link">$TabTitle</a>
+						<%-- <a class="tab-link">$TabTitle</a> --%>
+						<a id="defaultOpenCareer" class="tab-link currentTab" onclick="openTabCareer('$TabTitle', this)">$TabTitle</a>
 					</li>
 				<% end_loop %>
 			</ul>
 		</div>
 	</div>
 	<% loop $CareersTab %>
-	    <div class="frm-cntnr width--50 with-tabs align-c">
+	    <div id="$TabTitle" class="tab-content frm-cntnr width--50 with-tabs align-c">
 			<div class="frm-sub-title">
 				<h3>CAREER</h3>
 			</div>
@@ -76,3 +77,20 @@
 		</div>
 	</div>
 </section>
+<script>
+function openTabCareer(pageName,elmnt) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tab-content");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tab-link");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpenCareer").click();
+</script>

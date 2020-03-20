@@ -8,7 +8,7 @@
 			<ul class="tab-list">
 				<% loop $Children %>
 				    <li class="tab-item align-c">
-						<a href="$Link" class="tab-link">$Title</a>
+						<a href="$Link" class="tab-link currentTab">$Title</a>
 					</li>
 				<% end_loop %>
 			</ul>

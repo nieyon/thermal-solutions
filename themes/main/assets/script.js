@@ -71,7 +71,7 @@ var app = {
 			const fixedHeader = document.querySelector(".fixed-header");
 
 			const fixedHeaderOptions = {
-				rootMargin: "-999px 0px 0px 0px"
+				rootMargin: "-9999px 0px 0px 0px"
 			};
 
 			const fixedHeaderObserver = new IntersectionObserver(function (entries, fixedHeaderObserver) {

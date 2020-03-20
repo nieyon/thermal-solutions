@@ -51,9 +51,9 @@ namespace {
 
         private static $allowed_children = "ExpertiseAchievementsPage";
 
-        // private static $has_many = [
-        //     'ExpertiseAchievementsTab' => ExpertiseAchievementsTab::class,
-        // ];
+        private static $has_many = [
+            'ExpertiseAchievementsPage' => ExpertiseAchievementsPage::class,
+        ];
 
         private static $defaults = array(
             'PageName' => 'Expertise & Achievement Holder',

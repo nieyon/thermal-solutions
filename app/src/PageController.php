@@ -28,10 +28,6 @@ namespace {
            return HeaderFooter::get();
         }
 
-        public function Stylesheet(){
-           return Stylesheet::get();
-        }
-
         protected function init()
         {
             parent::init();

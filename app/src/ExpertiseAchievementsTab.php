@@ -20,6 +20,7 @@ class ExpertiseAchievementsTab extends DataObject
     private static $has_one = [
         'Photo' => Image::class,
         'ExpertiseAchievementsPage' => ExpertiseAchievementsPage::class,
+        // 'ExpertiseAchievementsHolder' => ExpertiseAchievementsHolder::class,
     ];
 
     private static $owns = [

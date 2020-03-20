@@ -15,8 +15,24 @@
 			</div>
 			<ul class="nav-list">
 				<% loop $Menu(1) %>
-					<li class="nav-item"><a class="$LinkingMode nav-link active" href="$Link" title="Go to the $Title page">$MenuTitle</a>
+					<li class="nav-item"><a class="$LinkingMode nav-link cuurent" href="$Link" title="Go to the $Title page">$MenuTitle</a>
 					</li>
+
+					<ul class="nav-list--tab">
+						<% loop $AboutTab %>
+							<li class="nav-item--tab">
+								<a href="$Link" class="nav-link--tab">$TabTitle</a>
+							</li>
+						<% end_loop %>
+					</ul>
+
+					<ul class="nav-list--tab">
+						<% loop $CareersTab %>
+							<li class="nav-item--tab">
+								<a href="$Link" class="nav-link--tab">$TabTitle</a>
+							</li>
+						<% end_loop %>
+					</ul>
 				<% end_loop %>
 			</ul>
 		</nav>
