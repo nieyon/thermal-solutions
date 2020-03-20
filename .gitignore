@@ -4,3 +4,17 @@
 /themes/simple/
 /resources/
 /public/resources/
+themes/main/images/
+
+# custom ignore
+*.bak
+
+.editorconfig
+.env.example
+.htaccess
+README.md
+betterbuttons/
+composer.lock
+node_modules/
+package-lock.json
+phpcs.xml.dist
