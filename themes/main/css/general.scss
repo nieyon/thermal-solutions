@@ -277,7 +277,7 @@ body {
             display: flex;
             justify-content: space-between;
 
-            .drpDwnTab {
+            .tabBtn {
                 display: none;
             }
 
@@ -910,6 +910,10 @@ body {
             -moz-appearance: none;
             appearance: none;
             border-radius: 0px;
+        }
+
+        input[type="file"] {
+            // display: none;
         }
 
         .frm-form__input {

@@ -16,24 +16,24 @@ var app = {
 			case 'HomePage':
 				setup.homepage();
 				break;
-			// case 'AboutUsPage':
-			// 	setup.aboutuspage();
-			// 	break;
-			// case 'ExpertiseAchivementsHolder':
-			// 	setup.expertiseachivementsholder();
-			// 	break;
-			// case 'ExpertiseAchivementsPage':
-			// 	setup.expertiseachivementspage();
-			// 	break;
-			// case 'ProductsAndServicesHolder':
-			// 	setup.productsandservicesholder();
-			// 	break;
-			// case 'ProductsAndServicesPage':
-			// 	setup.productsandservicespage();
-			// 	break;
-			// case 'CareersPage':
-			// 	setup.careerspage();
-			// 	break;
+			case 'AboutUsPage':
+				setup.aboutuspage();
+				break;
+			case 'ExpertiseAchivementsHolder':
+				setup.expertiseachivementsholder();
+				break;
+			case 'ExpertiseAchivementsPage':
+				setup.expertiseachivementspage();
+				break;
+			case 'ProductsAndServicesHolder':
+				setup.productsandservicesholder();
+				break;
+			case 'ProductsAndServicesPage':
+				setup.productsandservicespage();
+				break;
+			case 'CareersPage':
+				setup.careerspage();
+				break;
 			case 'ContactUsPage':
 				setup.contactpage();
 				break;
@@ -42,7 +42,6 @@ var app = {
 		setup.menu();
 		setup.slider();
 		setup.tab();
-		setup.header();
 		setup.footer();
 	},
 
@@ -74,12 +73,12 @@ var app = {
 
 		tab: function () {
 			// nav-list__footer
-			const tabDrp = document.querySelector('.drpDwnTab');
-			const tabList = document.querySelector('.tab-list');
+			let tabBtn = document.querySelector('.tabBtn');
+			let tabList = document.querySelector('.tab-list');
 			// contact-list__footer
 			let isActiveTab = false;
 
-			tabDrp.addEventListener('click', () => {
+			tabBtn.addEventListener('click', () => {
 				if (isActiveTab === false) {
 					// open
 					tabList.classList.add('isActiveTab');
@@ -94,26 +93,6 @@ var app = {
 					document.querySelector('.close-link').style.display = "none";
 				}
 			});
-		},
-
-		header: function () {
-			let header = document.querySelector(".hdr-frame");
-			let fixedHeader = document.querySelector(".fixed-header");
-
-			let fixedHeaderOptions = {
-				rootMargin: "-9999px 0px 0px 0px"
-			};
-
-			let fixedHeaderObserver = new IntersectionObserver(function (entries, fixedHeaderObserver) {
-				entries.forEach(entry => {
-					if (!entry.isIntersecting) {
-						header.classList.add("nav-scrolled");
-					} else {
-						header.classList.remove("nav-scrolled");
-					}
-				});
-			}, fixedHeaderOptions);
-			fixedHeaderObserver.observe(fixedHeader);
 		},
 
 		footer: function () {
@@ -227,46 +206,176 @@ var app = {
 				slidesToScroll: 3,
 				responsive: [{
 					breakpoint: 1024,
-					settings: {
-						slidesToShow: 1,
-						slidesToScroll: 1,
-						infinite: true,
-						dots: false
-					}
+					settings: "unslick"
 				}]
 			});
 		},
 
-		// aboutuspage: function() {
+		aboutuspage: function () {
+			let header = document.querySelector(".hdr-frame");
+			let fixedHeader = document.querySelector(".fixed-header");
 
-		// },
+			let fixedHeaderOptions = {
+				rootMargin: "-9999px 0px 0px 0px"
+			};
 
-		// expertiseachivementsholder: function() {
+			let fixedHeaderObserver = new IntersectionObserver(function (entries, fixedHeaderObserver) {
+				entries.forEach(entry => {
+					if (!entry.isIntersecting) {
+						header.classList.add("nav-scrolled");
+					} else {
+						header.classList.remove("nav-scrolled");
+					}
+				});
+			}, fixedHeaderOptions);
+			fixedHeaderObserver.observe(fixedHeader);
+		},
 
+		expertiseachivementsholder: function () {
+			let header = document.querySelector(".hdr-frame");
+			let fixedHeader = document.querySelector(".fixed-header");
 
-		// },
+			let fixedHeaderOptions = {
+				rootMargin: "-9999px 0px 0px 0px"
+			};
 
-		// expertiseachivementspage: function() {
+			let fixedHeaderObserver = new IntersectionObserver(function (entries, fixedHeaderObserver) {
+				entries.forEach(entry => {
+					if (!entry.isIntersecting) {
+						header.classList.add("nav-scrolled");
+					} else {
+						header.classList.remove("nav-scrolled");
+					}
+				});
+			}, fixedHeaderOptions);
+			fixedHeaderObserver.observe(fixedHeader);
+		},
 
+		expertiseachivementspage: function () {
 
-		// },
+			let header = document.querySelector(".hdr-frame");
+			let fixedHeader = document.querySelector(".fixed-header");
 
-		// productsandservicesholder: function() {
+			let fixedHeaderOptions = {
+				rootMargin: "-9999px 0px 0px 0px"
+			};
 
-		// },
+			let fixedHeaderObserver = new IntersectionObserver(function (entries, fixedHeaderObserver) {
+				entries.forEach(entry => {
+					if (!entry.isIntersecting) {
+						header.classList.add("nav-scrolled");
+					} else {
+						header.classList.remove("nav-scrolled");
+					}
+				});
+			}, fixedHeaderOptions);
+			fixedHeaderObserver.observe(fixedHeader);
+		},
 
-		// productsandservicesholder: function() {
+		productsandservicesholder: function () {
+			let header = document.querySelector(".hdr-frame");
+			let fixedHeader = document.querySelector(".fixed-header");
 
+			let fixedHeaderOptions = {
+				rootMargin: "-9999px 0px 0px 0px"
+			};
 
-		// },
+			let fixedHeaderObserver = new IntersectionObserver(function (entries, fixedHeaderObserver) {
+				entries.forEach(entry => {
+					if (!entry.isIntersecting) {
+						header.classList.add("nav-scrolled");
+					} else {
+						header.classList.remove("nav-scrolled");
+					}
+				});
+			}, fixedHeaderOptions);
+			fixedHeaderObserver.observe(fixedHeader);
+		},
 
-		// careerspage: function() {
+		productsandservicesholder: function () {
+			let header = document.querySelector(".hdr-frame");
+			let fixedHeader = document.querySelector(".fixed-header");
 
+			let fixedHeaderOptions = {
+				rootMargin: "-9999px 0px 0px 0px"
+			};
 
-		// },
+			let fixedHeaderObserver = new IntersectionObserver(function (entries, fixedHeaderObserver) {
+				entries.forEach(entry => {
+					if (!entry.isIntersecting) {
+						header.classList.add("nav-scrolled");
+					} else {
+						header.classList.remove("nav-scrolled");
+					}
+				});
+			}, fixedHeaderOptions);
+			fixedHeaderObserver.observe(fixedHeader);
+		},
+
+		careerspage: function () {
+			// app.form.init($('#QuotationForm'), $('#QuotationBtn'), 'form/apply/send', false);
+			app.form.init($('#QuotationForm'), $('#QuotationBtn'), 'form/apply/send', false);
+			$('.modal__career-form').fileupload({
+				url: baseHref + 'form/apply/upload',
+				dataType: 'json',
+				submit: function (e, data) {},
+				done: function (e, data) {
+					switch (data.result.response) {
+						case 0:
+							break;
+						case 1:
+
+							$('#file-image').val(data.result.message);
+							$('#maskfile-image').val(data.result.message);
+							$('#file-selected').html(data.result.filename);
+
+							break;
+					}
+				}
+			});
+
+			// header fixed 
+			let header = document.querySelector(".hdr-frame");
+			let fixedHeader = document.querySelector(".fixed-header");
+
+			let fixedHeaderOptions = {
+				rootMargin: "-9999px 0px 0px 0px"
+			};
+
+			let fixedHeaderObserver = new IntersectionObserver(function (entries, fixedHeaderObserver) {
+				entries.forEach(entry => {
+					if (!entry.isIntersecting) {
+						header.classList.add("nav-scrolled");
+					} else {
+						header.classList.remove("nav-scrolled");
+					}
+				});
+			}, fixedHeaderOptions);
+			fixedHeaderObserver.observe(fixedHeader);
+		},
 
 		contactpage: function () {
+			// contact form
 			app.form.init($('#cntctForm'), $('#cntctBtn'), 'form/contact/send', false);
+
+			// header fixed
+			let header = document.querySelector(".hdr-frame");
+			let fixedHeader = document.querySelector(".fixed-header");
+
+			let fixedHeaderOptions = {
+				rootMargin: "-9999px 0px 0px 0px"
+			};
+
+			let fixedHeaderObserver = new IntersectionObserver(function (entries, fixedHeaderObserver) {
+				entries.forEach(entry => {
+					if (!entry.isIntersecting) {
+						header.classList.add("nav-scrolled");
+					} else {
+						header.classList.remove("nav-scrolled");
+					}
+				});
+			}, fixedHeaderOptions);
+			fixedHeaderObserver.observe(fixedHeader);
 		}
 
 	},

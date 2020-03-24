@@ -21,17 +21,17 @@
 		<%-- tab 1 Who we are --%>
 		<div id="energySolutions" class="frm-tab__holder width--100">
 			<div class="tab-content width--50 align-c frm-padding">
-				<div class="frm-sub-title">
+				<div class="frm-sub-title animate-up1">
 					<h3>$Title</h3>
 				</div>
-				<div class="frm-title">
+				<div class="frm-title animate-up">
 					<h2>$ContentTitle</h2>
-					<div class="sub-title">
+					<div class="sub-title animate-up1">
 						<h2>$ContentSubTitle</h2>
 					</div>
-					<div class="line bg--indigo"></div>
+					<div class="line bg--indigo animate-right"></div>
 				</div>
-				<div class="content-list align-l">
+				<div class="content-list align-l animate-up1">
 					<div class="list-items">
 						<div class="list-title">
 							<h3>$ContentItemTitle1</h3>

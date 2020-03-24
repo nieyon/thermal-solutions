@@ -3,27 +3,15 @@
 		<h1>$MenuTitle</h1>
 	</div>
 	<div class="frm-cntnr width--100 without-tabs">
-		<div class="frm-sub-title">
-			<h3>$F6FrmSubTitle</h3>
-		</div>
-		<div class="frm-title">
-			<h2>$F6FrmTitle</h2>
-		</div>
-		<div class="frm-holder">
-
-<%-- 
-			<form id="cntctForm" method="post">
-			    <input class="frm-form__input" type="text" name="fname" placeholder="First name" required="">
-			    <input class="frm-form__input" type="text" name="lname" placeholder="Last name" required="">
-			    <input class="frm-form__input" type="email" name="email" placeholder="Email" required="">
-			    
-			    <input type="hidden" name="postFlag" value="1">
-			    <p class="btn" id="cntctBtn">Send</p>
-			</form>
- --%>
-
-
-
+		<% loop $HeaderFooter %>
+		   <div class="frm-sub-title animate-up1">
+				<h3>$F6FrmSubTitle</h3>
+			</div>
+			<div class="frm-title animate-up">
+				<h2>$F6FrmTitle</h2>
+			</div>
+		<% end_loop %>
+		<div class="frm-holder animate-up1">
 			<form id="cntctForm" method="post" class="frm-form__holder width--100">
 				<div class="frm-form__row">
 					<input type="text" name="fname" class="frm-form__input" required="" placeholder=" ">
@@ -38,7 +26,7 @@
 					<span class="floating-label">Phone Number (Optional)</span>
 				</div>
 				<div class="frm-form__row cntctfrm__animate-info-right">
-					<textarea name="message" class="frm-form__input textarea" placeholder=" " ></textarea>
+					<textarea name="message" class="frm-form__input textarea" placeholder=" " required=""></textarea>
 					<span class="floating-label">Message</span>
 				</div>
 				<div class="frm-form__row">

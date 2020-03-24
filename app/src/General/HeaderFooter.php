@@ -22,7 +22,7 @@ namespace {
 
 			// Frame 6 Contact Us page
 			'F6FrmSubTitle' => 'Text',
-			'F6FrmTitlle' => 'Text',
+			'F6FrmTitle' => 'Text',
 
 			// Contact Details
 			'Address' => 'Varchar',
