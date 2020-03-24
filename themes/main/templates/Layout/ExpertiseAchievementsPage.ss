@@ -6,9 +6,12 @@
 	<div class="frm-tabs-cntnr width--100">
 		<div class="frm-tab width--90">
 			<ul class="tab-list">
+				<li class="tab-item align-c drpDwnTab">
+					<a  class="tab-link" >click</a>
+				</li>
 				<% loop $Menu(2) %>
 				    <li class="tab-item align-c">
-						<a href="$Link" class="tab-link currentTab">$MenuTitle</a>
+						<a href="$Link" class="tab-link">$MenuTitle</a>
 					</li>
 				<% end_loop %>
 			</ul>

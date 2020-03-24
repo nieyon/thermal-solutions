@@ -6,10 +6,12 @@
 	<div class="frm-tabs-cntnr width--100">
 		<div class="frm-tab width--90">
 			<ul class="tab-list">
+				<li class="tab-item align-c drpDwnTab">
+					<a  class="tab-link" >click<i class="fas fa-angle-down drpdwnBtn"></i></a>
+				</li>
 				<% loop $AboutTab %>
 				    <li class="tab-item align-c">
-						<%-- <a class="tab-link">$TabTitle</a> --%>
-						<a id="defaultOpenAbout" class="tab-link currentTab" onclick="openTabAbout('$TabTitle', this)">$TabTitle</a>
+						<a id="defaultOpenAbout" class="tab-link" onclick="openTabAbout('$TabTitle', this)">$TabTitle</a>
 					</li>
 				<% end_loop %>
 			</ul>
@@ -33,31 +35,30 @@
 				</div>
 			<% end_loop %>
 				<div class="accomplishments align-l">
-						<% loop $HeaderFooter %>
-							<% loop $Accomplishments %>
-							    <div class="accom-item">
-									<div class="picture">
-										<img src="$Photo.URL" alt="">
-									</div>
-									<div class="year">
-										<h4>$AccomplishmentYear</h4>
-									</div>
-									<div class="frm-desc">
-										<p>$AccomplishmentDescription</p>
-									</div>
+					<% loop $HeaderFooter %>
+						<% loop $Accomplishments %>
+						    <div class="accom-item">
+								<div class="picture">
+									<img src="$Photo.URL" alt="">
 								</div>
-							<% end_loop %>
+								<div class="year">
+									<h4>$AccomplishmentYear</h4>
+								</div>
+								<div class="frm-desc">
+									<p>$AccomplishmentDescription</p>
+								</div>
+							</div>
 						<% end_loop %>
-					</div>
+					<% end_loop %>
+				</div>
 		</div>
 	</div>
 </section>
 
 <script>
 function openTabAbout(pageName,elmnt) {
-  var i, tabcontent;
-  tabcontent = document.getElementsByClassName("tab-content");
-  for (i = 0; i < tabcontent.length; i++) {
+  let tabcontent = document.getElementsByClassName("tab-content");
+  for (let i = 0; i < tabcontent.length; i++) {
     tabcontent[i].style.display = "none";
   }
   document.getElementById(pageName).style.display = "block";

@@ -15,24 +15,31 @@
 			</div>
 			<ul class="nav-list">
 				<% loop $Menu(1) %>
-					<li class="nav-item"><a class="$LinkingMode nav-link cuurent" href="$Link" title="Go to the $Title page">$MenuTitle</a>
+					<li id="$MenuTitle" class="nav-item nav-item__listener">
+						<a class="$LinkingMode nav-link" href="$Link" title="Go to the $Title page">$MenuTitle</a> 
+
+						<% if $AboutTab || $CareersTab %>
+							<a class="$LinkingMode nav-link--mobile width--100" href="#$MenuTitle" title="Go to the $Title page">$MenuTitle<i class="fas fa-angle-down drpdwnBtn"></i></a>
+						<% else %>
+							<a class="$LinkingMode nav-link--mobile" href="$Link" title="Go to the $Title page">$MenuTitle</a>    
+						<% end_if %>
+						
+						<ul class="nav-list--tab">
+							<% loop $AboutTab %>
+								<li class="nav-item--tab">
+									<a href="#" class="nav-link--tab">$TabTitle</a>
+								</li>
+							<% end_loop %>
+						</ul>
+
+						<ul class="nav-list--tab">
+							<% loop $CareersTab %>
+								<li class="nav-item--tab">
+									<a href="#" class="nav-link--tab">$TabTitle</a>
+								</li>
+							<% end_loop %>
+						</ul>
 					</li>
-
-					<ul class="nav-list--tab">
-						<% loop $AboutTab %>
-							<li class="nav-item--tab">
-								<a href="$Link" class="nav-link--tab">$TabTitle</a>
-							</li>
-						<% end_loop %>
-					</ul>
-
-					<ul class="nav-list--tab">
-						<% loop $CareersTab %>
-							<li class="nav-item--tab">
-								<a href="$Link" class="nav-link--tab">$TabTitle</a>
-							</li>
-						<% end_loop %>
-					</ul>
 				<% end_loop %>
 			</ul>
 		</nav>

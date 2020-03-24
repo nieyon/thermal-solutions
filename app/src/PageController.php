@@ -28,6 +28,35 @@ namespace {
            return HeaderFooter::get();
         }
 
+        public function Stylesheet(){
+           return Stylesheet::get();
+        }
+
+
+        public function Slide(){
+           return Slide::get();
+        }
+
+        public function CareersTab(){
+           return CareersTab::get();
+        }
+
+        public function AboutTab(){
+           return AboutTab::get();
+        }
+
+        public function ContactController(){
+           return ContactController::get();
+        }
+
+        public function Inquiry(){
+           return Inquiry::get();
+        }
+
+        public function InquiryAdmin(){
+           return InquiryAdmin::get();
+        }
+
         protected function init()
         {
             parent::init();

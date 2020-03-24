@@ -1,3 +1,4 @@
+<% if ClassName != 'Page' %>
 <div class="ftr-frame width--100 bg--indigo">
 	<div class="frm-cntnr">
 		<div class="nav-list__holder">
@@ -13,7 +14,7 @@
 		<% loop $HeaderFooter %>
 		<div class="details__holder">
 			<div class="holder-title contact-btn">
-				<h3>$F6FrmSubTitle<i class="open-contact fas fa-angle-down"></i><i class="close-contact fas fa-angle-up"></i></h3>
+				<h3>CONTACT US<i class="open-contact fas fa-angle-down"></i><i class="close-contact fas fa-angle-up"></i></h3>
 			</div>
 		
 				<div class="details-list details-list__ftr">
@@ -43,3 +44,4 @@
 <div class="ftr-frame__copyright frm-desc bg--apple">
 	<p>Copyright &copy; $SiteConfig.Title All Rights Reserved</p>
 </div>
+<% end_if %>

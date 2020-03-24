@@ -6,10 +6,13 @@
 	<div class="frm-tabs-cntnr width--100">
 		<div class="frm-tab width--90">
 			<ul class="tab-list">
+				<li class="tab-item align-c drpDwnTab">
+					<a  class="tab-link" >click</a>
+				</li>
 				<% loop $CareersTab %>
 				    <li class="tab-item align-c">
 						<%-- <a class="tab-link">$TabTitle</a> --%>
-						<a id="defaultOpenCareer" class="tab-link currentTab" onclick="openTabCareer('$TabTitle', this)">$TabTitle</a>
+						<a id="defaultOpenCareer" class="tab-link" onclick="openTabCareer('$TabTitle', this)">$TabTitle</a>
 					</li>
 				<% end_loop %>
 			</ul>

@@ -34,12 +34,14 @@ var app = {
 			// case 'CareersPage':
 			// 	setup.careerspage();
 			// 	break;
-			// case 'ContactUPage':
-			// 	setup.contactuspage();
-			// 	break;													
+			case 'ContactUsPage':
+				setup.contactpage();
+				break;
 		}
 
 		setup.menu();
+		setup.slider();
+		setup.tab();
 		setup.header();
 		setup.footer();
 	},
@@ -64,17 +66,45 @@ var app = {
 					isActive = false;
 				}
 			});
+
+			// var list = document.querySelectorAll('.nav-item__listener');
+
+			// console.log(list);
+		},
+
+		tab: function () {
+			// nav-list__footer
+			const tabDrp = document.querySelector('.drpDwnTab');
+			const tabList = document.querySelector('.tab-list');
+			// contact-list__footer
+			let isActiveTab = false;
+
+			tabDrp.addEventListener('click', () => {
+				if (isActiveTab === false) {
+					// open
+					tabList.classList.add('isActiveTab');
+					isActiveTab = true;
+					document.querySelector('.open-link').style.display = "none";
+					document.querySelector('.close-link').style.display = "inline-block";
+				} else {
+					// close
+					tabList.classList.remove('isActiveTab');
+					isActiveTab = false;
+					document.querySelector('.open-link').style.display = "inline-block";
+					document.querySelector('.close-link').style.display = "none";
+				}
+			});
 		},
 
 		header: function () {
-			const header = document.querySelector(".hdr-frame");
-			const fixedHeader = document.querySelector(".fixed-header");
+			let header = document.querySelector(".hdr-frame");
+			let fixedHeader = document.querySelector(".fixed-header");
 
-			const fixedHeaderOptions = {
+			let fixedHeaderOptions = {
 				rootMargin: "-9999px 0px 0px 0px"
 			};
 
-			const fixedHeaderObserver = new IntersectionObserver(function (entries, fixedHeaderObserver) {
+			let fixedHeaderObserver = new IntersectionObserver(function (entries, fixedHeaderObserver) {
 				entries.forEach(entry => {
 					if (!entry.isIntersecting) {
 						header.classList.add("nav-scrolled");
@@ -129,15 +159,40 @@ var app = {
 			});
 		},
 
-		homepage: function () {
-			const header = document.querySelector(".hdr-frame");
-			const fixedHeader = document.querySelector(".header-home");
+		slider: function () {
+			// frame 2 accomplishments
+			$('.accomplishments').slick({
+				dots: false,
+				arrows: false,
+				infinite: false,
+				speed: 300,
+				slidesToShow: 3,
+				slidesToScroll: 3
+				// responsive: [
+				//   {
+				//     breakpoint: 1024,
+				//     settings: {
+				//       slidesToShow: 1,
+				//       slidesToScroll: 3,
+				//       infinite: true,
+				//       dots: false,
+				//       rows: 3,
+				//       slidesPerRow: 3,
+				//     }
+				//   }
+				// ]
+			});
+		},
 
-			const fixedHeaderOptions = {
+		homepage: function () {
+			let header = document.querySelector(".hdr-frame");
+			let homeHeader = document.querySelector(".home-header");
+
+			let homeHeaderOptions = {
 				rootMargin: "-300px 0px 0px 0px"
 			};
 
-			const fixedHeaderObserver = new IntersectionObserver(function (entries, fixedHeaderObserver) {
+			let homeHeaderObserver = new IntersectionObserver(function (entries, homeHeaderObserver) {
 				entries.forEach(entry => {
 					if (!entry.isIntersecting) {
 						header.classList.add("nav-scrolled");
@@ -145,8 +200,11 @@ var app = {
 						header.classList.remove("nav-scrolled");
 					}
 				});
-			}, fixedHeaderOptions);
-			fixedHeaderObserver.observe(fixedHeader);
+			}, homeHeaderOptions);
+			homeHeaderObserver.observe(homeHeader);
+
+			// contact form
+			app.form.init($('#cntctForm'), $('#cntctBtn'), 'form/contact/send', false);
 
 			// frame 3 slider
 			$('.project-slider').slick({
@@ -158,183 +216,58 @@ var app = {
 				cssEase: 'linear',
 				autoplay: true
 			});
-		}
+
+			// frame 4 products and services
+			$('.services').slick({
+				dots: false,
+				arrows: false,
+				infinite: false,
+				speed: 300,
+				slidesToShow: 3,
+				slidesToScroll: 3,
+				responsive: [{
+					breakpoint: 1024,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1,
+						infinite: true,
+						dots: false
+					}
+				}]
+			});
+		},
 
 		// aboutuspage: function() {
 
-		// 	const header = document.querySelector(".hdr-frame");
-		// 	const fixedHeader = document.querySelector(".abt-frame");
-
-		// 	const fixedHeaderOptions = {
-		// 	  rootMargin: "-9999px 0px 0px 0px"
-		// 	};
-
-		// 	const fixedHeaderObserver = new IntersectionObserver(function(
-		// 	  entries,
-		// 	  fixedHeaderObserver
-		// 	) {
-		// 	  entries.forEach(entry => {
-		// 	    if (!entry.isIntersecting) {
-		// 	      header.classList.add("nav-scrolled");
-		// 	    } else {
-		// 	      header.classList.remove("nav-scrolled");
-		// 	    }
-		// 	  });
-		// 	},
-		// 	fixedHeaderOptions);
-		// 	fixedHeaderObserver.observe(fixedHeader);
 		// },
 
 		// expertiseachivementsholder: function() {
 
-		// 	const header = document.querySelector(".hdr-frame");
-		// 	const fixedHeader = document.querySelector(".exp-frame");
 
-		// 	const fixedHeaderOptions = {
-		// 	  rootMargin: "-9999px 0px 0px 0px"
-		// 	};
-
-		// 	const fixedHeaderObserver = new IntersectionObserver(function(
-		// 	  entries,
-		// 	  fixedHeaderObserver
-		// 	) {
-		// 	  entries.forEach(entry => {
-		// 	    if (!entry.isIntersecting) {
-		// 	      header.classList.add("nav-scrolled");
-		// 	    } else {
-		// 	      header.classList.remove("nav-scrolled");
-		// 	    }
-		// 	  });
-		// 	},
-		// 	fixedHeaderOptions);
-		// 	fixedHeaderObserver.observe(fixedHeader);
 		// },
 
 		// expertiseachivementspage: function() {
 
-		// 	const header = document.querySelector(".hdr-frame");
-		// 	const fixedHeader = document.querySelector(".exp-frame");
 
-		// 	const fixedHeaderOptions = {
-		// 	  rootMargin: "-9999px 0px 0px 0px"
-		// 	};
-
-		// 	const fixedHeaderObserver = new IntersectionObserver(function(
-		// 	  entries,
-		// 	  fixedHeaderObserver
-		// 	) {
-		// 	  entries.forEach(entry => {
-		// 	    if (!entry.isIntersecting) {
-		// 	      header.classList.add("nav-scrolled");
-		// 	    } else {
-		// 	      header.classList.remove("nav-scrolled");
-		// 	    }
-		// 	  });
-		// 	},
-		// 	fixedHeaderOptions);
-		// 	fixedHeaderObserver.observe(fixedHeader);
 		// },
 
 		// productsandservicesholder: function() {
 
-		// 	const header = document.querySelector(".hdr-frame");
-		// 	const fixedHeader = document.querySelector(".prd-frame");
-
-		// 	const fixedHeaderOptions = {
-		// 	  rootMargin: "-9999px 0px 0px 0px"
-		// 	};
-
-		// 	const fixedHeaderObserver = new IntersectionObserver(function(
-		// 	  entries,
-		// 	  fixedHeaderObserver
-		// 	) {
-		// 	  entries.forEach(entry => {
-		// 	    if (!entry.isIntersecting) {
-		// 	      header.classList.add("nav-scrolled");
-		// 	    } else {
-		// 	      header.classList.remove("nav-scrolled");
-		// 	    }
-		// 	  });
-		// 	},
-		// 	fixedHeaderOptions);
-		// 	fixedHeaderObserver.observe(fixedHeader);
 		// },
 
 		// productsandservicesholder: function() {
 
-		// 	const header = document.querySelector(".hdr-frame");
-		// 	const fixedHeader = document.querySelector(".prd-frame");
 
-		// 	const fixedHeaderOptions = {
-		// 	  rootMargin: "-9999px 0px 0px 0px"
-		// 	};
-
-		// 	const fixedHeaderObserver = new IntersectionObserver(function(
-		// 	  entries,
-		// 	  fixedHeaderObserver
-		// 	) {
-		// 	  entries.forEach(entry => {
-		// 	    if (!entry.isIntersecting) {
-		// 	      header.classList.add("nav-scrolled");
-		// 	    } else {
-		// 	      header.classList.remove("nav-scrolled");
-		// 	    }
-		// 	  });
-		// 	},
-		// 	fixedHeaderOptions);
-		// 	fixedHeaderObserver.observe(fixedHeader);
 		// },
 
 		// careerspage: function() {
 
-		// 	const header = document.querySelector(".hdr-frame");
-		// 	const fixedHeader = document.querySelector(".car-frame");
 
-		// 	const fixedHeaderOptions = {
-		// 	  rootMargin: "-9999px 0px 0px 0px"
-		// 	};
-
-		// 	const fixedHeaderObserver = new IntersectionObserver(function(
-		// 	  entries,
-		// 	  fixedHeaderObserver
-		// 	) {
-		// 	  entries.forEach(entry => {
-		// 	    if (!entry.isIntersecting) {
-		// 	      header.classList.add("nav-scrolled");
-		// 	    } else {
-		// 	      header.classList.remove("nav-scrolled");
-		// 	    }
-		// 	  });
-		// 	},
-		// 	fixedHeaderOptions);
-		// 	fixedHeaderObserver.observe(fixedHeader);
 		// },
 
-		// contactuspage: function() {
-
-		// 	const header = document.querySelector(".hdr-frame");
-		// 	const fixedHeader = document.querySelector(".cnt-frame");
-
-		// 	const fixedHeaderOptions = {
-		// 	  rootMargin: "-9999px 0px 0px 0px"
-		// 	};
-
-		// 	const fixedHeaderObserver = new IntersectionObserver(function(
-		// 	  entries,
-		// 	  fixedHeaderObserver
-		// 	) {
-		// 	  entries.forEach(entry => {
-		// 	    if (!entry.isIntersecting) {
-		// 	      header.classList.add("nav-scrolled");
-		// 	    } else {
-		// 	      header.classList.remove("nav-scrolled");
-		// 	    }
-		// 	  });
-		// 	},
-		// 	fixedHeaderOptions);
-		// 	fixedHeaderObserver.observe(fixedHeader);
-		// },
-
+		contactpage: function () {
+			app.form.init($('#cntctForm'), $('#cntctBtn'), 'form/contact/send', false);
+		}
 
 	},
 

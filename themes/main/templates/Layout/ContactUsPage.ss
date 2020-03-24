@@ -10,9 +10,23 @@
 			<h2>$F6FrmTitle</h2>
 		</div>
 		<div class="frm-holder">
-			<form class="frm-form__holder width--100">
+
+<%-- 
+			<form id="cntctForm" method="post">
+			    <input class="frm-form__input" type="text" name="fname" placeholder="First name" required="">
+			    <input class="frm-form__input" type="text" name="lname" placeholder="Last name" required="">
+			    <input class="frm-form__input" type="email" name="email" placeholder="Email" required="">
+			    
+			    <input type="hidden" name="postFlag" value="1">
+			    <p class="btn" id="cntctBtn">Send</p>
+			</form>
+ --%>
+
+
+
+			<form id="cntctForm" method="post" class="frm-form__holder width--100">
 				<div class="frm-form__row">
-					<input type="text" name="name" class="frm-form__input" required="" placeholder=" ">
+					<input type="text" name="fname" class="frm-form__input" required="" placeholder=" ">
 					<span class="floating-label">Full Name</span>
 				</div>
 				<div class="frm-form__row">
@@ -20,7 +34,7 @@
 					<span class="floating-label">E-mail Address</span>
 				</div>
 				<div class="frm-form__row">
-					<input type="text" name="phoneNumber" class="frm-form__input" required="" placeholder=" ">
+					<input type="text" name="phonenumber" class="frm-form__input" required="" placeholder=" ">
 					<span class="floating-label">Phone Number (Optional)</span>
 				</div>
 				<div class="frm-form__row cntctfrm__animate-info-right">
@@ -28,7 +42,8 @@
 					<span class="floating-label">Message</span>
 				</div>
 				<div class="frm-form__row">
-					<input type="submit" name="submit" class="submit btn" value="SEND">
+					<input type="hidden" name="postFlag" value="1">
+			    	<p class="btn" id="cntctBtn">Send</p>
 				</div>
 			</form>
 			<% loop $HeaderFooter %>

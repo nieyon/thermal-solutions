@@ -4,8 +4,13 @@
 @media screen and (max-width: 1024px) {
 
 	
-
-
+// drop down tab
+.drpdwnBtn {
+	float: right;
+	margin-top: 5px;
+	margin-right: 10px;
+	color: $color--indigo;
+}
 	/*
 	* Mobile
 	*/
@@ -26,28 +31,57 @@
 			}
 
 		}
-
+		// tabs
 		.frm-tabs-cntnr {
 		   	position: relative;
 			z-index: 0;
 			top: 0;
-			border-bottom: 3px solid $color--cornflowerBlue;
+			width: 90%;
+			margin: 0 auto;
+			transition: all .5s ease;
 
 
 		    .frm-tab {
+		    	width: 100%;
+		    	margin: 0;
 
-		        .tab-link {
-		            padding: 15px 0;
-		            font-size: 18px;
+		    	.tab-list {
+		    		display: block;
+		    		overflow: hidden;
+		    		max-height: 50px;
+		    		transition: all .5s ease;
 
-		            &:hover {
+		    		.drpDwnTab {
+		    			display: block;
+		    		}
 
-		            }
+		    		&.isActiveTab {
+		    			max-height: 450px;
+		    		}
 
-		            &::before {
-		               display: none;
-		            }
-		        }
+		    		.tab-item {
+		    			text-align: left;
+		    			padding: 12px 0;
+		    			border-bottom: 3px solid $color--cornflowerBlue;
+
+		    			&.drpDwnTab {
+		    				cursor: pointer;
+		    			}
+						
+						.tab-link {
+				            padding: 0;
+				            font-size: 16px;
+
+				            &:hover {
+
+				            }
+
+				            &::before {
+				               display: none;
+				            }
+				        }
+		    		}
+		    	}
 		    }
 		}
 
@@ -102,8 +136,6 @@
 	        }
 
 	        .frm-desc {
-	            margin: 0;
-	            width: 100%;
 
 	            * {
 	            	font-size: 15px;
@@ -336,10 +368,15 @@
 	                .nav-item {
 	                    margin-left: 0;
 	                    border-bottom: 1px solid $color--cornflowerBlue;
-	                    padding: 10px 30px;
-	                
+	                    padding: 10px 20px 10px 30px;
+	                    overflow: hidden;
 
 	                    .nav-link {
+	                    	display: none;
+	                    }
+
+	                    .nav-link--mobile {
+	                    	display: inline-block;
 	                        font-family: $font--2;
 	                        font-size: 20px;
 	                        position: relative;
@@ -347,34 +384,45 @@
 	                        text-transform: none;
 	                    }
 
-	                    	.nav-link::before {
-	                    		margin: 0;
-							    left: -30px;
-							    bottom: 0;
-							    top: -11px;
-							    background-color: $color--apple;
-							    width: 7px;
-							    height: 49px;
-							    transform-origin: left;
-							}
+	                    .drpdwnBtn {
 
-							.nav-link:hover::before {
-							    transform: scaleX(1);
-							}	
+	                    }
+
+		                .nav-list--tab {
+		                    display: block;
+		                    overflow: hidden;
+		                    max-height: 0;
+		                    transition: all .5s ease;
+		                    
+		                    .nav-item--tab {
+		                        padding: 0 30px;
+
+		                        .nav-link--tab {
+									font-family: $font--2;
+									text-transform: none;
+									line-height: 2.5;
+		                        }
+		                    }
+		                }
+
+                    	.nav-link--mobile::before {
+                    		margin: 0;
+						    left: -30px;
+						    bottom: 0;
+						    top: -11px;
+						    background-color: $color--apple;
+						    width: 7px;
+						    height: 49px;
+						    transform-origin: left;
+						}
+
+						.nav-link--mobile:hover::before {
+						    transform: scaleX(1);
+						}	
 	                }
 
-	                .nav-list--tab {
-	                    display: block;
-	                    
-	                    .nav-item--tab {
-	                        padding: 0 50px;
-
-	                        .nav-link--tab {
-								font-family: $font--2;
-								text-transform: none;
-								line-height: 2.5;
-	                        }
-	                    }
+	                .nav-item:target .nav-list--tab {
+	                	max-height: 160px;
 	                }
 	            }
 	        }
@@ -415,15 +463,15 @@
 	    .nav-list,
 	    .details-list {
 	        display: block;
-	        transform: scale(0);
 	        transform-origin: top left;
-	        position: absolute;
+	        position: relative;
+	        overflow: hidden;
+	        max-height: 0;
+	        transition: all .5s ease;
 
 	        &.isActiveLink,
 	        &.isActiveContact {
-	        	transition: all .5s ease;
-	        	transform: scale(1);
-	        	position: relative;
+				max-height: 200px;
 	        }
 		}
 	}
@@ -457,7 +505,8 @@
 	            }
 
 	            .nav-list {
-	                display: block;
+            		display: block;
+                    transition: all .5s ease;
 
 	                &.isActiveLink {
 
@@ -477,11 +526,10 @@
 	                    .nav-link::before {
 						    left: 0;
 						    right: 0;
-						    top: 0;
-						    bottom: -35px;
-						    margin: auto;
+						    top: 25px;
+						    bottom: 0;
+						    margin: 0;
 						    background-color: $color--white;
-						    width: 70%;
 						    height: 2px;
 						    transform-origin: bottom;
 						}

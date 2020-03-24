@@ -261,6 +261,7 @@ body {
     .text-justify { text-align: justify; }
 }
 
+
 // tabs
 .frm-tabs-cntnr {
     position: fixed;
@@ -275,6 +276,10 @@ body {
         .tab-list {
             display: flex;
             justify-content: space-between;
+
+            .drpDwnTab {
+                display: none;
+            }
 
             .tab-item {
                 padding: 27px 0;
@@ -310,7 +315,7 @@ body {
                     }
                 }
 
-                .currentTab::before {
+                .current::before {
                     content: "";
                     position: absolute;
                     left: 0;
@@ -327,15 +332,17 @@ body {
 
 // accomplishments
 .accomplishments {
-    display: flex;
-    justify-content: space-between;
-    width: 70%;
+    display: block;
+    // justify-content: space-between;
+    width: 80%;
     margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 20px;
 
     .accom-item {
         display: grid;
         column-gap: 10px;
-        grid-template-columns: repeat(2, auto);
+        grid-template-columns: 50px auto;
 
         .picture {
             align-self: center;
@@ -351,15 +358,17 @@ body {
         }
 
         .year {
-            width: 150px;
             font-family: $font--2a;
             color: $color--mineShaft;
-            font-size: 14px;
+            font-size: 12px;
         }
 
         .frm-desc {
             margin: 0;
-            width: 170px;
+
+            p {
+                font-size: 14px;
+            }
         }
     }
 }
@@ -502,22 +511,27 @@ body {
                         // color: $color--mineShaft;
                     }
 
+                    .nav-link--mobile {
+                        display: none;
+                    }
+
                     .nav-link:hover {
                         color: $color--indigo;
                         font-weight: bold;
                     }
-                }
+                    
+                    .nav-list--tab {
+                        display: none;
 
-                .nav-list--tab {
-                    display: none;
-
-                    .nav-item--tab {
-                        
                         .nav-item--tab {
+                            
+                            .nav-item--tab {
 
+                            }
                         }
                     }
                 }
+
             }
         }
     }  

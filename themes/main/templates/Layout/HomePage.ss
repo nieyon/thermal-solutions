@@ -1,5 +1,5 @@
 <%-- frame 1 --%>
-<section class="header-home hm-frame hm-frame--1">
+<section class="home-header hm-frame hm-frame--1">
 	<div class="frm-cntnr width--90">
 		<div class="frm-content width--40">
 			    <div class="frm-title clr--indigo">
@@ -19,7 +19,7 @@
 
 				<div class="img-dividers">
 				<div class="divider--1"></div>
-				<div class="divider--2"></div>
+				<div class="divider--2 animate-up"></div>
 				<div class="divider--3"></div>
 			</div>
 			</div>
@@ -190,9 +190,9 @@
 			<h2>$F6FrmTitle</h2>
 		</div>
 		<div class="frm-holder">
-			<form class="frm-form__holder width--100">
+			<form id="cntctForm" method="post" class="frm-form__holder width--100">
 				<div class="frm-form__row">
-					<input type="text" name="name" class="frm-form__input" required="" placeholder=" ">
+					<input type="text" name="fname" class="frm-form__input" required="" placeholder=" ">
 					<span class="floating-label">Full Name</span>
 				</div>
 				<div class="frm-form__row">
@@ -200,7 +200,7 @@
 					<span class="floating-label">E-mail Address</span>
 				</div>
 				<div class="frm-form__row">
-					<input type="text" name="phoneNumber" class="frm-form__input" required="" placeholder=" ">
+					<input type="text" name="phonenumber" class="frm-form__input" required="" placeholder=" ">
 					<span class="floating-label">Phone Number (Optional)</span>
 				</div>
 				<div class="frm-form__row cntctfrm__animate-info-right">
@@ -208,7 +208,8 @@
 					<span class="floating-label">Message</span>
 				</div>
 				<div class="frm-form__row">
-					<input type="submit" name="submit" class="submit btn" value="SEND">
+					<input type="hidden" name="postFlag" value="1">
+			    	<p class="btn" id="cntctBtn">Send</p>
 				</div>
 			</form>
 			<% loop $HeaderFooter %>
