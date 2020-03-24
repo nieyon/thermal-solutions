@@ -132,18 +132,18 @@ class ApplyController extends Controller
             );
         }
  
-        // if(empty($_POST['g-recaptcha-response']) ) {
-        //     $this->errors = 'Please check the the captcha form';
-        // }
+        if(empty($_POST['g-recaptcha-response']) ) {
+            $this->errors = 'Please check the the captcha form';
+        }
 
-        // $secretKey = "6Le9iOMUAAAAABg9QofWPboOif-2BgfgRJ4CBHpm";
-        // $response = $this->postRecaptcha($secretKey, $this->captcha);
+        $secretKey = "6Le9iOMUAAAAABg9QofWPboOif-2BgfgRJ4CBHpm";
+        $response = $this->postRecaptcha($secretKey, $this->captcha);
 
-        // // should return JSON with success as true
-        // if($response->success) {
-        // } else {
-        //     $this->errors = 'CAPTCHA verification failed.';
-        // }
+        // should return JSON with success as true
+        if($response->success) {
+        } else {
+            $this->errors = 'CAPTCHA verification failed.';
+        }
 
         switch ($this->postFlag) {
             // Sending
