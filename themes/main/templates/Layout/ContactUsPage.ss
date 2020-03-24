@@ -42,6 +42,11 @@
 					<span class="floating-label">Message</span>
 				</div>
 				<div class="frm-form__row">
+					<div class="recaptcha-hldr m-margin-b">
+						<div class="g-recaptcha" data-sitekey="6Le9iOMUAAAAAMMC7YppddnxmM_BOsCGRljP8ZPp"></div>
+					</div>
+				</div>
+				<div class="frm-form__row">
 					<input type="hidden" name="postFlag" value="1">
 			    	<p class="btn" id="cntctBtn">Send</p>
 				</div>

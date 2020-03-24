@@ -47,6 +47,9 @@
         <!-- SweetAlert -->
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
         
+        <!-- Recaptcha -->
+        <script src='https://www.google.com/recaptcha/api.js' async defer></script>
+
         
         <!--[if lt IE 9]>
         <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -105,6 +108,14 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+        <% if ClassName == 'CareersPage' %>
+        <!-- File Upload -->
+        <script src="$ThemeDir/js/vendor/jquery.ui.widget.js"></script>
+        <script src="$ThemeDir/js/vendor/jquery.iframe-transport.js"></script>
+        <script src="$ThemeDir/js/vendor/jquery.fileupload.js"></script>
+         <!--  -->
+        <% end_if %>
 
         <!-- Validate -->
         <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>

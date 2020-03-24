@@ -42,7 +42,8 @@
 			<div class="form-title">
 				<h3>Apply for a job</h3>
 			</div>
-			<form class="frm-form__holder width--100">
+			<form class="frm-form__holder width--100" id="applyForm">
+				<input type="" name="jobtitle" value="$CareerTitle" hidden="">
 				<div class="frm-form__col">
 					<div class="frm-form__row">
 						<input type="text" name="name" class="frm-form__input" placeholder=" " required="">
@@ -65,16 +66,30 @@
 					</div>
 				</div>
 				<div class="frm-form__col">
-					<div class="frm-form__row">
+					<div class="frm-form__row frm-form__file">
+						<div class="frm-form__input">
+							<label id="file-selected" for="fileupload" class="custom-file-upload">Upload here</label>
+						</div>
+						<input type="file" id="fileupload" class="fileuploadBtn" name="file" required hidden>
+						<input type="hidden" id="file-image" name="resume" value="" required="" />
+			 		</div>
+					<%-- <div class="frm-form__row">
+
 						<input type="file" name="file" class="frm-form__input file" placeholder=" " required="">
-					</div>
+					</div> --%>
 					<div class="frm-form__row cntctfrm__animate-info-right">
 						<textarea name="message" class="frm-form__input textarea" placeholder=" "></textarea>
 						<span class="floating-label">Message</span>
 					</div>
+
+					<%-- <div class="recaptcha-hldr m-margin-b">
+						<div class="g-recaptcha" data-sitekey="6Le9iOMUAAAAAMMC7YppddnxmM_BOsCGRljP8ZPp"></div>
+					</div> --%>
+
 				</div>
 				<div class="frm-form__row">
-					<input type="submit" name="submit" class="submit btn" value="SUBMIT RESUME">
+				 	<input type="hidden" name="postFlag" value="1">
+					<input id="applyBtn" type="submit" name="submit" class="submit btn" value="SUBMIT RESUME">
 				</div>
 			</form>
 		</div>

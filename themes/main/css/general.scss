@@ -963,6 +963,17 @@ body {
         }
     }
 }
+.custom-file-upload {
+    font-size: 13px !important;
+    line-height: 32px;
+    cursor: pointer;
+    text-transform: none !important;
+}  
+
+.fileuploadBtn {
+   opacity: 0;
+   width: 0px;
+}
 
 .frm-form__check-holder {
     position: relative;

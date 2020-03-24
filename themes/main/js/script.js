@@ -26,9 +26,9 @@ var app = {
 			// case 'ProductsAndServicesPage':
 			// 	setup.productsandservicespage();
 			// 	break;
-			// case 'CareersPage':
-			// 	setup.careerspage();
-			// 	break;
+			case 'CareersPage':
+				setup.careerspage();
+				break;
 			case 'ContactUsPage':
 				setup.contactpage();
 				break;													
@@ -267,10 +267,27 @@ var app = {
 
 		// },
 
-		// careerspage: function() {
+		careerspage: function() {
+			app.form.init($('#applyForm'), $('#applyBtn'), 'form/apply/send', false);
 
+			$('.frm-form__file').fileupload({
+		        url: baseHref + 'form/apply/upload',
+		        dataType: 'json',
+				submit: function(e, data) {},
+				done: function(e, data) {
+					switch(data.result.response) {
+						case 0: break;
+						case 1:
 
-		// },
+							$('#file-image').val(data.result.message);
+							$('#maskfile-image').val(data.result.message);
+							$('#file-selected').html(data.result.filename);
+
+						break;
+					}
+				}
+		    });
+		},
 
 		contactpage: function() {
 		    app.form.init($('#cntctForm'), $('#cntctBtn'), 'form/contact/send', false);
