@@ -49,11 +49,13 @@ namespace {
 	
 	    ];
 
-	    private static $has_many = [
-			'AboutTab' => AboutTab::class,
-	    ];
+	  //   private static $has_many = [
+			// 'AboutTab' => AboutTab::class,
+	  //   ];
 
-		private static $allowed_children = "none";
+		private static $allowed_children = [
+			'AboutUs',
+		];
 
 		private static $defaults = array(
 			'PageName' => 'About Us Page',
@@ -69,16 +71,16 @@ namespace {
 			$fields->removeFieldFromTab('Root.Main', 'Content');
 
 			// About tabs
-			$fields->addFieldToTab('Root.About Tabs', new TabSet('TabsSets',
-				new Tab('About Tabs',
-					GridField::create(
-			            'AboutTab',
-			            'About Tabs',
-			            $this->AboutTab(),
-			            GridFieldConfig_RecordEditor::create()
-		        	)
-				)
-			));
+			// $fields->addFieldToTab('Root.About Tabs', new TabSet('TabsSets',
+			// 	new Tab('About Tabs',
+			// 		GridField::create(
+			//             'AboutTab',
+			//             'About Tabs',
+			//             $this->AboutTab(),
+			//             GridFieldConfig_RecordEditor::create()
+		 //        	)
+			// 	)
+			// ));
 			
 
 			/**

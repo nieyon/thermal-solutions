@@ -6,8 +6,8 @@
 	<div class="frm-tabs-cntnr width--100">
 		<div class="frm-tab width--90">
 			<ul class="tab-list">
-				<li class="tab-item align-c drpDwnTab">
-					<a  class="tab-link" >click</a>
+				<li class="tab-item align-c tabBtn">
+					<a  class="tab-link" >click<i class="fas fa-angle-down drpdwnBtn"></i></a>
 				</li>
 				<% loop $CareersTab %>
 				    <li class="tab-item align-c">
@@ -20,14 +20,14 @@
 	</div>
 	<% loop $CareersTab %>
 	    <div id="$TabTitle" class="tab-content frm-cntnr width--50 with-tabs align-c">
-			<div class="frm-sub-title">
+			<div class="frm-sub-title animate-up1">
 				<h3>CAREER</h3>
 			</div>
-			<div class="frm-title">
+			<div class="frm-title animate-up1">
 				<h2>$TabTitle</h2>
-				<div class="line bg--indigo"></div>
+				<div class="line bg--indigo animate-right"></div>
 			</div>
-			<div class="list-items align-l">
+			<div class="list-items align-l animate-up1">
 				<div class="list-title">
 					<h3>Qualifications</h3>
 				</div>
@@ -38,12 +38,16 @@
 </section>
 <section class="car-frame car-frame--2 bg--white">
 	<div class="frm-cntnr width--100 aling-l frm-padding">
-		<div class="frm-holder width--60">
+		<div class="frm-holder width--60 animate-up1">
 			<div class="form-title">
 				<h3>Apply for a job</h3>
 			</div>
-			<form class="frm-form__holder width--100" id="applyForm">
-				<input type="" name="jobtitle" value="$CareerTitle" hidden="">
+			<form id="QuotationForm" method="post" class="frm-form__holder width--100">
+				<div class="frm-form__row">
+					<% loop $CareersTab %>
+					    <input type="hidden" name="jobtitle" class="frm-form__input" placeholder=" " required="" value="$TabTitle">
+					<% end_loop %>
+					</div>
 				<div class="frm-form__col">
 					<div class="frm-form__row">
 						<input type="text" name="name" class="frm-form__input" placeholder=" " required="">
@@ -54,31 +58,26 @@
 						<span class="floating-label">E-mail Address</span>
 					</div>
 					<div class="frm-form__row">
-						<input type="text" name="contactNumber" class="frm-form__input" placeholder=" " required="">
+						<input type="text" name="mobile" class="frm-form__input" placeholder=" " required="">
 						<span class="floating-label">Contact Number</span>
 					</div>
 					<div class="frm-form__row">
 						<div class="frm-select">
-							<select>
-								<option>Highest Educational Attainment</option>
+							<select name="attaintment" required="">
+								<option value="">Highest Educational Attainment</option>
+								<option value="College Graduate">College Graduate</option>
+								<option value="High School Graduate">High School Graduate</option>
 							</select>
 						</div>
 					</div>
 				</div>
 				<div class="frm-form__col">
-					<div class="frm-form__row frm-form__file">
-						<div class="frm-form__input">
-							<label id="file-selected" for="fileupload" class="custom-file-upload">Upload here</label>
-						</div>
-						<input type="file" id="fileupload" class="fileuploadBtn" name="file" required hidden>
-						<input type="hidden" id="file-image" name="resume" value="" required="" />
-			 		</div>
-					<%-- <div class="frm-form__row">
-
-						<input type="file" name="file" class="frm-form__input file" placeholder=" " required="">
-					</div> --%>
+					<div class="frm-form__row">
+						<input id="file-selected" type="file" name="resume" class="frm-form__input file" placeholder=" " required="">
+						<label for="resume">Choose File</label>
+					</div>
 					<div class="frm-form__row cntctfrm__animate-info-right">
-						<textarea name="message" class="frm-form__input textarea" placeholder=" "></textarea>
+						<textarea name="intent" class="frm-form__input textarea" placeholder=" " required=""></textarea>
 						<span class="floating-label">Message</span>
 					</div>
 
@@ -88,8 +87,8 @@
 
 				</div>
 				<div class="frm-form__row">
-				 	<input type="hidden" name="postFlag" value="1">
-					<input id="applyBtn" type="submit" name="submit" class="submit btn" value="SUBMIT RESUME">
+					<input type="hidden" name="postFlag" value="1">
+			    	<p class="btn" id="QuotationBtn">Submit Resume</p>
 				</div>
 			</form>
 		</div>

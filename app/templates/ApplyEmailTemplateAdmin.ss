@@ -84,7 +84,7 @@
 						<p class="color--gray">Mobile : {$mobile}</p>
 						<p class="color--gray">Intent : {$intent}</p>
 						<p class="color--gray">Resume :</p>
-						<a href="{$filelink}" target="_blank">View Attached File</a>
+						<a href="{$filelink}" target="_blank">View Attached File</a>	
 						<br>
 						<br>
 						<p class="color--gray">Thank You,</p>

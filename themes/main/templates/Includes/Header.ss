@@ -5,8 +5,7 @@
 			<div class="hdr-frm__logo">
 				<% loop $HeaderFooter %>
 				    <div class="img-logo">
-						<a href="
-						$BaseHref"><img src="$HeaderLogo.URL" alt=""></a>
+						<a href="$BaseHref"><img src="$HeaderLogo.URL" alt=""></a>
 					</div>
 				<% end_loop %>
 			</div>
@@ -16,9 +15,15 @@
 			<ul class="nav-list">
 				<% loop $Menu(1) %>
 					<li id="$MenuTitle" class="nav-item nav-item__listener">
+						<% if ClassName == 'AboutUsPage' || ClassName == 'ExpertiseAchievementsHolder' || ClassName == 'CareersPage' %>
+						<% loop Children.First %>
+						<a class="<% loop $Parent %>$LinkingMode<% end_loop %> nav-link" href="$Link" title="Go to the $Title page">$Parent.MenuTitle</a> 
+						<% end_loop %>
+						<% else %>
 						<a class="$LinkingMode nav-link" href="$Link" title="Go to the $Title page">$MenuTitle</a> 
+						<% end_if %>
 
-						<% if $AboutTab || $CareersTab %>
+						<%-- <% if $AboutTab || $CareersTab %>
 							<a class="$LinkingMode nav-link--mobile width--100" href="#$MenuTitle" title="Go to the $Title page">$MenuTitle<i class="fas fa-angle-down drpdwnBtn"></i></a>
 						<% else %>
 							<a class="$LinkingMode nav-link--mobile" href="$Link" title="Go to the $Title page">$MenuTitle</a>    
@@ -38,7 +43,7 @@
 									<a href="#" class="nav-link--tab">$TabTitle</a>
 								</li>
 							<% end_loop %>
-						</ul>
+						</ul> --%>
 					</li>
 				<% end_loop %>
 			</ul>

@@ -1,17 +1,17 @@
 <section class="fixed-header exp-frame exp-frame--1 bg--alabaster mobile">
-	<div class="frm-title mb-0">
+	<%-- <div class="frm-title mb-0">
 	 	<h1>$MenuTitle</h1>
-	 </div>
+	 </div> --%>
 	 <%-- tabs --%>
 	<div class="frm-tabs-cntnr width--100">
 		<div class="frm-tab width--90">
 			<ul class="tab-list">
-				<li class="tab-item align-c drpDwnTab">
+				<%-- <li class="tab-item align-c drpDwnTab">
 					<a  class="tab-link" >click</a>
-				</li>
-				<% loop $Menu(2) %>
+				</li> --%>
+				<% loop $Parent.Children %>
 				    <li class="tab-item align-c">
-						<a href="$Link" class="tab-link">$MenuTitle</a>
+						<a href="$Link" class="tab-link <% if isCurrent %>active<% end_if %>">$MenuTitle</a>
 					</li>
 				<% end_loop %>
 			</ul>

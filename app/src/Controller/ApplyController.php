@@ -17,13 +17,11 @@ class ApplyController extends Controller
     private $name;
     private $email;
     private $mobile;
-    private $intent;
+    private $attaintment;
     private $resume;
-    
-    private $errors;
-    
+    private $intent;
+    private $errors; 
     private $recipient;
-
     private $file;
     private $hasAttachment = false;
     
@@ -76,12 +74,16 @@ class ApplyController extends Controller
             $this->mobile = $_POST['mobile'];
         }
 
-        if(isset($_POST['intent'])) {
-            $this->intent = $_POST['intent'];
+        if(isset($_POST['attaintment'])) {
+            $this->attaintment = $_POST['attaintment'];
         }
 
         if(isset($_POST['resume'])) {
             $this->resume = $_POST['resume'];
+        }
+
+        if(isset($_POST['intent'])) {
+            $this->intent = $_POST['intent'];
         }
 
         if(isset($_POST['g-recaptcha-response'])){
@@ -120,9 +122,9 @@ class ApplyController extends Controller
             );
         }
 
-        if(empty($_POST['intent'])) {
-            $this->errors['intent'] = array(
-                'error' => 'Please input your intention'
+        if(empty($_POST['attaintment'])) {
+            $this->errors['attaintment'] = array(
+                'error' => 'Please input your attaintment'
             );
         }
 
@@ -131,19 +133,26 @@ class ApplyController extends Controller
                 'error' => 'Please input your resume'
             );
         }
+
+        if(empty($_POST['intent'])) {
+            $this->errors['intent'] = array(
+                'error' => 'Please input your intention'
+            );
+        }
+
  
-        if(empty($_POST['g-recaptcha-response']) ) {
-            $this->errors = 'Please check the the captcha form';
-        }
+        // if(empty($_POST['g-recaptcha-response']) ) {
+        //     $this->errors = 'Please check the the captcha form';
+        // }
 
-        $secretKey = "6Le9iOMUAAAAABg9QofWPboOif-2BgfgRJ4CBHpm";
-        $response = $this->postRecaptcha($secretKey, $this->captcha);
+        // $secretKey = "6Le9iOMUAAAAABg9QofWPboOif-2BgfgRJ4CBHpm";
+        // $response = $this->postRecaptcha($secretKey, $this->captcha);
 
-        // should return JSON with success as true
-        if($response->success) {
-        } else {
-            $this->errors = 'CAPTCHA verification failed.';
-        }
+        // // should return JSON with success as true
+        // if($response->success) {
+        // } else {
+        //     $this->errors = 'CAPTCHA verification failed.';
+        // }
 
         switch ($this->postFlag) {
             // Sending
@@ -171,12 +180,13 @@ class ApplyController extends Controller
     }
 
     private function writeRecord() {
-        $duplicate = new Application();
+        $duplicate = new Application;
 
         $duplicate->JobTitle = $this->jobtitle;
         $duplicate->Name = $this->name;
         $duplicate->MobileNumber = $this->mobile;
-        $duplicate->Email = $this->email;
+        $duplicate->Attaintment = $this->attaintment;
+        $duplicate->AppEmail = $this->email;
         $duplicate->Intent = $this->intent;
 
         $this->file = File::get()->ByID($this->resume);
@@ -216,6 +226,7 @@ class ApplyController extends Controller
             'name' => $this->name,
             'email' => $this->email,
             'mobile' => $this->mobile,
+            'attaintment' => $this->attaintment,
             'intent' => $this->intent,
             'filelink' => $this->file->AbsoluteLink(),
         ]);

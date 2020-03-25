@@ -88,6 +88,11 @@
 				            border-radius: 0px;
 				        }
 
+				        input[type="file"] {
+							border: 1px solid red;
+							margin: 20px;
+						}
+
 				        .frm-form__input {
 				            height: 37px;
 				            font-size: 14px;
@@ -114,7 +119,7 @@
 
 				        .frm-form__input:focus ~ .floating-label,
 				        .frm-form__input:not(:placeholder-shown) ~ .floating-label {
-				          top: 0;
+				          top: -14px;
 				          bottom: 0;
 				          left: 25px;
 				          font-size: 9px;

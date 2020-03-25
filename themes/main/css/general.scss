@@ -277,7 +277,7 @@ body {
             display: flex;
             justify-content: space-between;
 
-            .drpDwnTab {
+            .tabBtn {
                 display: none;
             }
 
@@ -312,6 +312,23 @@ body {
 
                     &:hover::before {
                         transform: scaleX(1);
+                    }
+
+                    &.active {
+                        color: $color--indigo;
+
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            left: 0;
+                            bottom: 0;
+                            background-color: $color--indigo;
+                            width: 100%;
+                            height: 3px;
+                            transform: scaleX(1);
+                            transform-origin: bottom;
+                            transition: transform .5s ease;
+                        }
                     }
                 }
 
@@ -561,7 +578,8 @@ body {
     transform: scaleX(1);
 }
 
-.current {
+.current,
+.section {
     color: $color--indigo;
     font-weight: bold;
 
@@ -910,6 +928,10 @@ body {
             -moz-appearance: none;
             appearance: none;
             border-radius: 0px;
+        }
+
+        input[type="file"] {
+            // display: none;
         }
 
         .frm-form__input {

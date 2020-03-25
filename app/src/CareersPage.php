@@ -49,12 +49,14 @@ namespace {
 	
 	    ];
 
-	     private static $has_many = [
-			'CareersTab' => CareersTab::class,
-	    ];
+	  //   private static $has_many = [
+			// 'CareersTab' => CareersTab::class,
+	  //   ];
 
 
-		private static $allowed_children = "none";
+		private static $allowed_children = [
+			'Career',
+		];
 
 		private static $defaults = array(
 			'PageName' => 'CareersPage',
@@ -69,16 +71,16 @@ namespace {
 			#Remove by tab
 			$fields->removeFieldFromTab('Root.Main', 'Content');
 
-			$fields->addFieldToTab('Root.CareersTabs', new TabSet('TabsSets',
-				new Tab('Careers Tab',
-					GridField::create(
-			            'CareersTab',
-			            'Careers Tabs',
-			            $this->CareersTab(),
-			            GridFieldConfig_RecordEditor::create()
-		        	)
-				)
-			));
+			// $fields->addFieldToTab('Root.CareersTabs', new TabSet('TabsSets',
+			// 	new Tab('Careers Tab',
+			// 		GridField::create(
+			//             'CareersTab',
+			//             'Careers Tabs',
+			//             $this->CareersTab(),
+			//             GridFieldConfig_RecordEditor::create()
+		 //        	)
+			// 	)
+			// ));
 			
 
 			/**

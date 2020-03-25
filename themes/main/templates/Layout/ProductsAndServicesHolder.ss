@@ -4,11 +4,11 @@
 	</div>
 	<div class="frm-cntnr width--55 frm-padding without-tabs">
 		<% if $ProSerDesc %>
-		    <div class="frm-desc">
+		    <div class="frm-desc animate-up1">
 				$ProSerDesc
 			</div>
 		<% end_if %>
-		<div class="service-items">
+		<div class="service-items animate-up1">
 			<% loop $Children %>
 				<a href="$Link">
 					<div class="service-item">

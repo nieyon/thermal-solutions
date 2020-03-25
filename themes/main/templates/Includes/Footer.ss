@@ -2,8 +2,8 @@
 <div class="ftr-frame width--100 bg--indigo">
 	<div class="frm-cntnr">
 		<div class="nav-list__holder">
-			<div class="holder-title link-btn">
-				<h3>LINKS<i class="open-link fas fa-angle-down"></i><i class="close-link fas fa-angle-up"></i></h3>
+			<div class="holder-title">
+				<h3 class="link-btn">LINKS<i class="open-link fas fa-angle-down"></i><i class="close-link fas fa-angle-up"></i></h3>
 			</div>
 			<ul class="nav-list nav-list__ftr">
 				<% loop $Menu(1) %>
@@ -13,8 +13,8 @@
 		</div>
 		<% loop $HeaderFooter %>
 		<div class="details__holder">
-			<div class="holder-title contact-btn">
-				<h3>CONTACT US<i class="open-contact fas fa-angle-down"></i><i class="close-contact fas fa-angle-up"></i></h3>
+			<div class="holder-title">
+				<h3 class="contact-btn">CONTACT US<i class="open-contact fas fa-angle-down"></i><i class="close-contact fas fa-angle-up"></i></h3>
 			</div>
 		
 				<div class="details-list details-list__ftr">
